@@ -1,0 +1,13 @@
+<!-- projects.html -->
+<ul>
+  {% for project in projects %}
+    <li>
+      Project Name: {{ project.name }}
+      {% if project.csv_file %}
+        <a href="{{ project.csv_file.url }}">{{ project.csv_file.name }}</a> <!-- Display filename -->
+      {% else %}
+        No CSV file uploaded
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
